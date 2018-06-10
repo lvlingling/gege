@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="app">{{message}}</div>
+<script src="vue.js"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello Vue!',
+            get now(){
+                return new Date();
+            }
+        },
+        created:function () {
+           window.setInterval(function () {
+               this.message="Hello Vue: "+new Date();
+           },1000);
+        },
+        methods:{
+
+        }
+    })
+</script>
+</body>
+</html>
